@@ -1,5 +1,33 @@
 {
-  "name": "Jane",
-  "email": "jane@example.com",
-  "password": 123456
+  "login":{
+    "usernameInput": "input[id='mat-input-0']",
+    "passwordInput": "input[id='mat-input-1']",
+    "errorMsgLabel": ".error-text",
+    "loginBtn": "button[type='submit']",
+    "sendOTPBtn": "Send",
+    "OTPLabel": ".welcome-text",
+    "emailRadioBtn": "#mat-radio-3 > label",
+    "submitBtn": "Submit"
+  },
+  "dashboard": {
+    "title": "div > .menu-name",
+    "searchIcon": ".menu-collapsed > div:nth-child(1) > div > div > img",
+    "addPatientBtn": "Add patient "
+  },
+  "addPatient": {
+    "title": "div .menu-name",
+    "titleDD": "#mat-select-value-7",
+    "salutationDD": "Mr",
+    "fnameInput": "#mat-input-35",
+    "lnameInput": "#mat-input-36",
+    "occupationInput": "#mat-input-38",
+    "genderDD": "Gender",
+    "genderOption": "Male",
+    "dobInput": "#mat-input-39",
+    "physicalAddInput": "#Physical-address-51",
+    "mobInput": "#mat-input-53",
+    "emailInput": "#mat-input-41",
+    "accountHolderTab": "Account Holder",
+    "submitBtn": "//button/span[contains(text(),'Submit')]"
+  }
 }

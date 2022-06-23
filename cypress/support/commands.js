@@ -24,3 +24,7 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 
+import "../utils/browser-actions";
+import "../utils/api-methods";
+import "../utils/fetch-test-data";
+import "cypress-xpath";

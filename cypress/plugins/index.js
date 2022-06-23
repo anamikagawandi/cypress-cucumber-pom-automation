@@ -22,22 +22,3 @@ module.exports = (on, config) => {
   on ('file:preprocessor', cucumber())
 }
 
-// const {downloadFile} = require('cypress-downloadfile/lib/addPlugin')
-// module.exports = (on, config) => {
-//   on('task', {downloadFile})
-// }
-
-
-// const parsePdf = async (sample) => {
-//   const pdfPathname = path.join(repoRoot, sample)
-//   let dataBuffer = fs.readFileSync(pdfPathname)
-//   return pdf(dataBuffer);
-// };
-
-// module.exports = (on, config) => {
-//   on('task', {
-//       getPdfContent (sample) {
-//           return String(parsePdf(sample))
-//       }
-//   });
-// };
