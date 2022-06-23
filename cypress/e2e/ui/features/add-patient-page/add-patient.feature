@@ -18,5 +18,5 @@ Feature: Verify add patient page
         And click on submit button
         Then Patient details should be added and I should be redirected to Dashboard page
         Examples:
-            | salutation | fname | lname    | occupation    | gender | dob        | address | mobile     | email            |
-            | Mr         | Steve | Thompson | IT Profession | Male   | 17/05/1986 | US      | 9876456544 | stevet@gmail.com |
+            | salutation | fname | lname    | occupation    | gender | dob        | address   | mobile    | email          |
+            | Mr         | Steve | Thompson | IT Profession | Male   | 17/05/1986 | hyderabad | 0957910970 | test@gmail.com |

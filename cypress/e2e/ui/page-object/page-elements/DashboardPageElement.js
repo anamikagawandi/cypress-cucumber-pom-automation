@@ -1,5 +1,3 @@
-/// <reference types="cypress" />
-
 const locators = require("../../../../fixtures/locators.json");
 
 export default class DashboardPageElement {

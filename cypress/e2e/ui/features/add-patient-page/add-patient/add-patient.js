@@ -4,7 +4,7 @@ import { getEnvVar } from "../../../../../utils/fetch-test-data";
 import DashboardPageAction from "../../../page-object/page-actions/DashboardPageAction";
 import AddPatientPageAction from "../../../page-object/page-actions/AddPatientPageAction";
 
-const loginPage = new LoginPageAction(); 
+const loginPage = new LoginPageAction();
 const dashboardPage = new DashboardPageAction();
 const addPatientPage = new AddPatientPageAction();
 
@@ -17,57 +17,61 @@ Before(() => {
 });
 
 Given("I am on add patient page", () => {
+  cy.wait(1000 * 10);
   addPatientPage.validateTitle();
 });
 
 When(/^I select salutation (.+)$/, (salutation) => {
-	addPatientPage.selectSalutation(salutation);
+  addPatientPage.selectSalutation(salutation);
 });
 
 When(/^I input firstname (.+)$/, (fname) => {
-	addPatientPage.inputFirstName(fname);
+  addPatientPage.inputFirstName(fname);
 });
 
 When(/^I input lastname (.+)$/, (lname) => {
-	addPatientPage.inputLastName(lname);
+  addPatientPage.inputLastName(lname);
 });
 
 When(/^I input occupation (.+)$/, (occupation) => {
-	addPatientPage.inputOccupation(occupation);
+  addPatientPage.inputOccupation(occupation);
 });
 
-When("I select gender", () => {
-	addPatientPage.selectGender();
+When(/^I select gender (.+)$/, (gender) => {
+  addPatientPage.selectGender(gender);
 });
 
 When(/^I input DOB (.+)$/, (dob) => {
-	addPatientPage.inputDOB(dob);
+  addPatientPage.inputDOB(dob);
 });
 
 When("I move to Contact Details tab", () => {
-	addPatientPage.goToContactDetailsTab();
+  addPatientPage.goToContactDetailsTab();
 });
 
 When(/^I input physical address (.+)$/, (address) => {
-	addPatientPage.inputPhysicalAdd(address);
+  addPatientPage.inputPhysicalAdd(address);
 });
 
 When(/^I input mobile number (.+)$/, (mobile) => {
-	addPatientPage.inputMobNo(mobile);
+  addPatientPage.inputMobNo(mobile);
 });
 
 When(/^I input personal email id (.+)$/, (email) => {
-	addPatientPage.inputEmail(email);
+  addPatientPage.inputEmail(email);
 });
 
 When("I move to Accounts Holder tab", () => {
-	addPatientPage.goToAccountHolderTab();
+  addPatientPage.goToAccountHolderTab();
 });
 
 When("click on submit button", () => {
-	addPatientPage.addPatient();
+  addPatientPage.addPatient();
 });
 
-Then("Patient details should be added and I should be redirected to Dashboard page", () => {
-  dashboardPage.validateTitle();
-});
+Then(
+  "Patient details should be added and I should be redirected to Dashboard page",
+  () => {
+    dashboardPage.validateTitle();
+  }
+);

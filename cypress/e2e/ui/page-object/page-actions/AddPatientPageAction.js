@@ -31,9 +31,9 @@ export default class AddPatientPageAction {
     this.addPatientPageElements.occupationInput().type(occupation);
   }
 
-  selectGender() {
+  selectGender(gender) {
     this.addPatientPageElements.genderDD().click({force: true});
-    this.addPatientPageElements.genderOption().click({force: true});
+    this.addPatientPageElements.genderOption(gender).click({force: true});
   }
 
   inputDOB(dob) {
@@ -49,11 +49,11 @@ export default class AddPatientPageAction {
   }
 
   inputMobNo(mobNo) {
-    this.addPatientPageElements.mobInput.type(mobNo);
+    this.addPatientPageElements.mobInput().type(mobNo);
   }
 
   inputEmail(email) {
-    this.addPatientPageElements.emailInput.type(email);
+    this.addPatientPageElements.emailInput().type(email);
   }
 
   goToAccountHolderTab() {

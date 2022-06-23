@@ -19,7 +19,6 @@ export default class DashboardPageAction {
   }
 
   clickAddPatient() {
-    cy.wait(1000);
     this.dashboardPageElements.addPatientBtn().click();
   }
 }

@@ -23,11 +23,11 @@ When("I click on search icon", () => {
   dashboardPage.clickSearchIcon();
 });
 
-Then("I click on add patient button", () => {
+And("I click on add patient button", () => {
   dashboardPage.clickAddPatient();
 });
 
-// Then("I will be routed to Add Patient page", () => {
-//   const addPatientPage = new AddPatientPageAction();
-//   addPatientPage.validateTitle();
-// });
+Then("I will be routed to Add Patient page", () => {
+  const addPatientPage = new AddPatientPageAction();
+  addPatientPage.validateTitle();
+});

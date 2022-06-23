@@ -32,8 +32,8 @@ export default class AddPatientPageElement {
     return cy.contains(locators.addPatient.genderDD);
   }
 
-  genderOption() {
-    return cy.contains(locators.addPatient.genderOption);
+  genderOption(gender) {
+    return cy.contains(gender);
   }
 
   dobInput() {
@@ -41,7 +41,7 @@ export default class AddPatientPageElement {
   }
 
   contactDetailsTab() {
-    return cy.contains(locators.addPatient.contactDetailsTab);
+    return cy.contains(locators.addPatient.contactDetailTab);
   }
 
   physicalAddInput() {
