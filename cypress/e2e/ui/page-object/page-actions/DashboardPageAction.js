@@ -15,12 +15,11 @@ export default class DashboardPageAction {
   }
 
   clickSearchIcon() {
-    cy.wait(1000);
-    this.dashboardPageElements.searchIcon().click();
+    this.dashboardPageElements.searchIcon().click({force: true});
   }
 
   clickAddPatient() {
     cy.wait(1000);
-    this.dashboardPageElements.searchIcon().click();
+    this.dashboardPageElements.addPatientBtn().click();
   }
 }

@@ -53,17 +53,17 @@ export default class LoginPageAction {
   }
 
   getOTPForLogin(username, password) {
-    loginPage.inputUsername(username);
-    loginPage.inputPassword(password);
-    loginPage.clickLoginBtn();
+    this.inputUsername(username);
+    this.inputPassword(password);
+    this.clickLoginBtn();
     cy.wait(1000 * 10);
-    loginPage.selectEmailRadioBtn();
-    loginPage.clickSendOTPBtn();
+    this.selectEmailRadioBtn();
+    this.clickSendOTPBtn();
     cy.wait(1000 * 30);
   }
 
   getLoggedIn() {
-    loginPage.clickSubmitBtn();
+    this.clickSubmitBtn();
   }
 
 

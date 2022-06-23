@@ -12,8 +12,8 @@ export default class AddPatientPageElement {
     return cy.get(locators.addPatient.titleDD);
   }
 
-  salutationDD() {
-    return cy.contains(locators.addPatient.salutationDD);
+  salutationOption(salutation) {
+    return cy.contains(salutation);
   }
 
   fnameInput() {
@@ -38,6 +38,10 @@ export default class AddPatientPageElement {
 
   dobInput() {
     return cy.get(locators.addPatient.dobInput);
+  }
+
+  contactDetailsTab() {
+    return cy.contains(locators.addPatient.contactDetailsTab);
   }
 
   physicalAddInput() {
