@@ -17,9 +17,48 @@ export default class LoginPageAction {
   }
 
   inputUsername(username) {
-    cy.wait(1000);
     this.loginPageElements.usernameInput().clear();
     this.loginPageElements.usernameInput().type(username);
+  }
+
+  inputOTP(otp) {
+    this.loginPageElements.OTPInput().clear();
+    this.loginPageElements.OTPInput().type(otp);
+  }
+
+  blurUsername() {
+    this.loginPageElements.usernameInput().blur();
+  }
+
+  inputBlankPassword() {
+    this.loginPageElements.passwordInput().focus().blur();
+  }
+
+  blurOTP() {
+    this.loginPageElements.OTPInput().focus().blur();
+  }
+
+  validateInvalidEmailMsgLabel (errorMsg) {
+    this.loginPageElements.invalidEmailMsgLabel()
+    .should("be.visible")
+    .contains(errorMsg);
+  }
+
+  validateReqEmailMsgLabel (errorMsg) {
+    this.loginPageElements.emailReqLabel()
+    .should("be.visible")
+    .contains(errorMsg);
+  }
+
+  validateReqPasswordMsgLabel (errorMsg) {
+    this.loginPageElements.passwordReqLabel()
+    .contains(errorMsg);
+  }
+
+  validateIncorrectOTPFormatLabel(errorMsg) {
+    this.loginPageElements.invalidOTPFormatLabel()
+    .should("be.visible")
+    .contains(errorMsg);
   }
 
   inputPassword(password) {

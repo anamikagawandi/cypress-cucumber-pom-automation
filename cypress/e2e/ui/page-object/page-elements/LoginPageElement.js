@@ -34,4 +34,24 @@ export default class LoginPageElement {
   submitBtn() {
     return cy.contains(locators.login.submitBtn);
   }
+
+  invalidEmailMsgLabel() {
+    return cy.get(locators.login.invalidEmailMsgLabel);
+  }
+
+  emailReqLabel() {
+    return cy.get(locators.login.emailReqLabel);
+  }
+
+  passwordReqLabel() {
+    return cy.get(locators.login.passwordReqLabel);
+  }
+
+  invalidOTPFormatLabel() {
+    return cy.get(locators.login.invalidOTPFormatLabel);
+  }
+
+  OTPInput() {
+    return cy.get(locators.login.OTPInput);
+  }
 }

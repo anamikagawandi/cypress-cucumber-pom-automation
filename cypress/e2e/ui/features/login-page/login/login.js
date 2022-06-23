@@ -63,12 +63,48 @@ Then("I should be logged in", () => {
   dashboardPage.validateTitle();
 });
 
-And("Enter invalid OTP", () => {
-  cy.wait(1000 * 30); // wait for 30 sec to wait for entering OTP
+And("Enter invalid OTP as {string}", (otp) => {
+  loginPage.inputOTP(parseInt(otp));
 });
 
 Then("I should see invalid OTP error message {string}", (errorMsg) => {
   loginPage.getErrorMessageLabel()
   .should("be.visible")
   .and("contain", errorMsg);
+});
+
+When("I type invalid email format: {string}", (email) => {
+	loginPage.inputUsername(email);
+  loginPage.blurUsername();
+});
+
+Then("I should see invalid email error message {string}", (errorMsg) => {
+	loginPage.validateInvalidEmailMsgLabel(errorMsg);
+});
+
+When("I type blank email", () => {
+	loginPage.inputUsername(" ");
+  loginPage.blurUsername();
+});
+
+Then("I should see required field email error message {string}", (errorMsg) => {
+	loginPage.validateReqEmailMsgLabel(errorMsg);
+});
+
+
+When("I type blank password", () => {
+  loginPage.inputBlankPassword();
+});
+
+Then("I should see required field password error message {string}", (errorMsg) => {
+	loginPage.validateReqPasswordMsgLabel(errorMsg);
+});
+
+And("Enter incorrect OTP format as {string}", (otp) => {
+  loginPage.inputOTP(parseInt(otp));
+  loginPage.blurOTP();
+});
+
+Then("I should see incorrect OTP error message {string}", (errorMsg) => {
+  loginPage.validateIncorrectOTPFormatLabel(errorMsg);
 });

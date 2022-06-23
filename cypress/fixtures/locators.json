@@ -2,10 +2,15 @@
   "login":{
     "usernameInput": "input[id='mat-input-0']",
     "passwordInput": "input[id='mat-input-1']",
+    "invalidEmailMsgLabel": "#mat-error-0",
+    "emailReqLabel": "#mat-error-0",
+    "passwordReqLabel": "#mat-error-1",
     "errorMsgLabel": ".error-text",
     "loginBtn": "button[type='submit']",
     "sendOTPBtn": "Send",
+    "invalidOTPFormatLabel": "#mat-error-3",
     "OTPLabel": ".welcome-text",
+    "OTPInput": "#mat-input-2",
     "emailRadioBtn": "#mat-radio-3 > label",
     "submitBtn": "Submit"
   },
