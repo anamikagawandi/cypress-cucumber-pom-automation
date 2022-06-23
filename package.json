@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "cypress:open": "./node_modules/.bin/cypress open",
-    "cypress:run-qa": "npx cypress run ENV=qa"
+    "cypress:open": "./node_modules/.bin/cypress open || node cucumber-html-report.js",
+    "generate-report": "node cucumber-html-report.js",
+    "cypress:run-headless": "./node_modules/.bin/cypress run --spec 'cypress/e2e/ui/features/login-page/login.feature' || npm run generate-report"
   },
   "repository": {
     "type": "git",
@@ -20,17 +21,20 @@
   "homepage": "https://github.com/anamikagawandi/cypress-cucumber-pom-automation#readme",
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true,
-    "stepDefinitions": "cypress/e2e/ui"
+    "stepDefinitions": "cypress/e2e/ui",
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/reports/cucumber-json",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    }
   },
   "devDependencies": {
-    "cucumber-html-reporter": "^5.3.0",
     "cypress": "^10.2.0",
-    "cypress-failed-log": "^2.9.1",
     "cypress-xpath": "^1.6.2"
   },
   "dependencies": {
     "cypress-cucumber-preprocessor": "^4.3.1",
-    "cypress-downloadfile": "^1.2.0",
-    "pdf-parse": "^1.1.1"
+    "multiple-cucumber-html-reporter": "^1.21.4"
   }
 }

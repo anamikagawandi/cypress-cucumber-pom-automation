@@ -108,3 +108,4 @@ cypress.dev.json
 
 # Reports
 downloads/
+reports/
