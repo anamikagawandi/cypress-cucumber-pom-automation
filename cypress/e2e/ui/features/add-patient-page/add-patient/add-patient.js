@@ -9,9 +9,10 @@ const dashboardPage = new DashboardPageAction();
 const addPatientPage = new AddPatientPageAction();
 
 Before(() => {
-  loginPage.navigateToURL();
-  loginPage.getOTPForLogin(getEnvVar("username"), getEnvVar("password"));
-  loginPage.getLoggedIn();
+  // loginPage.navigateToURL();
+  // loginPage.getOTPForLogin(getEnvVar("username"), getEnvVar("password"));
+  // loginPage.getLoggedIn();
+  cy.loginToApp(loginPage, getEnvVar("username"), getEnvVar("password"));
   dashboardPage.clickSearchIcon();
   dashboardPage.clickAddPatient();
 });

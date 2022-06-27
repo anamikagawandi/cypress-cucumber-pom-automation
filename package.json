@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "cypress:open": "./node_modules/.bin/cypress open || node cucumber-html-report.js",
+    "cypress:open": "./node_modules/.bin/cypress open",
     "generate-report": "node cucumber-html-report.js",
+    "cypress:run": "./node_modules/.bin/cypress run --spec 'cypress/e2e/ui/features/**/*.feature' || npm run generate-report",
     "cypress:run-headless": "./node_modules/.bin/cypress run --spec 'cypress/e2e/ui/features/login-page/login.feature' || npm run generate-report"
   },
   "repository": {

@@ -9,9 +9,10 @@ const loginPage = new LoginPageAction();
 const dashboardPage = new DashboardPageAction();
 
 Given("I have logged in", () => {
-  loginPage.navigateToURL();
-  loginPage.getOTPForLogin(getEnvVar("username"), getEnvVar("password"));
-  loginPage.getLoggedIn();
+  // loginPage.navigateToURL();
+  // loginPage.getOTPForLogin(getEnvVar("username"), getEnvVar("password"));
+  // loginPage.getLoggedIn();
+  cy.loginToApp(loginPage, getEnvVar("username"), getEnvVar("password"));
 });
 
 Then("I should be able to view dashboard", () => {

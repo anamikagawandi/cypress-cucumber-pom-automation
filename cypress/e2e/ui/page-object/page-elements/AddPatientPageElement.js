@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 require("cypress-xpath");
 
-const locators = require("../../../../fixtures/locators.json");
+const locators = require("../../../../locators/locators.json");
 
 export default class AddPatientPageElement {
   titleMenu() {

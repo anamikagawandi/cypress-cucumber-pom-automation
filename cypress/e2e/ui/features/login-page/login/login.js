@@ -9,8 +9,7 @@ Before(() => {
 });
 
 Given("I am on login page", () => {
-  loginPage.validateTitle()
-  .should('eq',"Capstone");
+  cy.validateTitle(loginPage, "Capstone");
 });
 
 When ("I type valid username and password", () => {

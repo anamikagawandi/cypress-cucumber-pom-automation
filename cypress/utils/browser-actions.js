@@ -8,6 +8,15 @@ Cypress.Commands.add("clearInput", (locator) => {
     cy.get(locator).clear();
 });
 
+Cypress.Commands.add("clearAndInput", (element, text) => {
+    element.clear();
+    element.type(text);
+});
+
+Cypress.Commands.add("focusAndBlur", (element) => {
+    element.focus().blur();
+});
+
 Cypress.Commands.add("checkInput", (locator) => {
     cy.get(locator).check();
 });
@@ -81,3 +90,16 @@ Cypress.Commands.add("switchToIframeAndSendText", (iframeLocator, eleLocator, te
         
 //     })    
 // });
+
+// Validation
+Cypress.Commands.add("validateTitle", (pageObj, title) => {
+    pageObj.getTitle()
+    .should('eq', title);
+});
+
+// Common steps
+Cypress.Commands.add("loginToApp", (loginPageObj, username, password) => {
+    loginPageObj.navigateToURL();
+    loginPageObj.getOTPForLogin(username, password);
+    loginPageObj.getLoggedIn();
+});

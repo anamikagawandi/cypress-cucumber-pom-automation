@@ -12,7 +12,7 @@ export default class LoginPageAction {
     cy.visit(getEnvVar("url"));
   }
 
-  validateTitle() {
+  getTitle() {
     return cy.title();
   }
 
