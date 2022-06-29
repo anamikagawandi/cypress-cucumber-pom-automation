@@ -7,8 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "cypress:open": "./node_modules/.bin/cypress open",
     "generate-report": "node cucumber-html-report.js",
-    "cypress:run": "./node_modules/.bin/cypress run --spec 'cypress/e2e/ui/features/**/*.feature' || npm run generate-report",
-    "cypress:run-headless": "./node_modules/.bin/cypress run --spec 'cypress/e2e/ui/features/login-page/login.feature' || npm run generate-report"
+    "cypress:run": "./node_modules/.bin/cypress run --spec 'cypress/e2e/ui/features/**/login.feature' && npm run generate-report",
+    "cypress:run-headless": "./node_modules/.bin/cypress run --spec 'cypress/e2e/ui/features/login-page/login.feature' || npm run generate-report",
+    "report:allure": "allure generate allure-results --clean -o allure-report && allure open allure-report",
+    "cypress:run-allure": "./node_modules/.bin/cypress run --spec 'cypress/e2e/ui/features/**/login.feature' --env allure=true && npm run report:allure"
   },
   "repository": {
     "type": "git",
@@ -31,8 +33,11 @@
     }
   },
   "devDependencies": {
-    "cypress": "^10.2.0",
-    "cypress-xpath": "^1.6.2"
+    "@shelex/cypress-allure-plugin": "^2.27.0",
+    "allure-commandline": "^2.17.2",
+    "cypress": "10.2.0",
+    "cypress-xpath": "^1.6.2",
+    "mocha-allure-reporter": "^1.4.0"
   },
   "dependencies": {
     "cypress-cucumber-preprocessor": "^4.3.1",

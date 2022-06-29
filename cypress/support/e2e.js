@@ -20,7 +20,9 @@ Cypress.on('uncaught:exception', (err, runnable) => {
   // returning false here prevents Cypress from
   // failing the test
   return false;
-})
+});
+
+import '@shelex/cypress-allure-plugin';
 
 afterEach(() => {
   const screenshotsFolder = Cypress.config("screenshotsFolder");

@@ -109,3 +109,5 @@ cypress.dev.json
 # Reports
 downloads/
 reports/
+screenshots/
+allure-results/
