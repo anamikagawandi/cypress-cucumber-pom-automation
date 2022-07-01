@@ -3,7 +3,9 @@ const { defineConfig } = require("cypress");
 module.exports = defineConfig({
   chromeWebSecurity: true,
   env: {
-   
+    url: "https://adactin.capstonesystemdev.com.au/login",
+    username: "",
+    password: ""
   },
   e2e: {
     // We've imported your old cypress plugins here.
